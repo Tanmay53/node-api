@@ -1,9 +1,8 @@
-const User = require('./../models/users')
+const User = require('../models/users')
 
 function register(req,res)
 {
     // taking a user
-    console.log(req);
     const newuser=new User(req.body);
     
     if(newuser.password!=newuser.password2)return res.status(400).json({message: "password not match"});
